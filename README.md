@@ -1,6 +1,8 @@
 GrowingIO Autotracker For CDP
 ======
-![GrowingIO](https://www.growingio.com/vassets/images/home_v3/gio-logo-primary.svg)  
+![GrowingIO](https://www.growingio.com/vassets/images/home_v3/gio-logo-primary.svg)
+[![CI](https://github.com/growingio/growingio-sdk-android-autotracker-cdp/workflows/CI/badge.svg)](https://github.com/growingio/growingio-sdk-android-autotracker-cdp/actions/)
+[![GitHub](https://img.shields.io/github/license/growingio/growingio-sdk-android-autotracker)](https://github.com/growingio/growingio-sdk-android-autotracker/blob/master/LICENSE)
 [![Platform Android](https://img.shields.io/badge/platform-Android-brightgreen)]()
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 

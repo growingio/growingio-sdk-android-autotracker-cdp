@@ -3,17 +3,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "30.0.0"
-
+    compileSdkVersion buildConfiguration.compileVersion
     defaultConfig {
-        minSdkVersion 17
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+        minSdkVersion buildConfiguration.minSdkVersion
+        targetSdkVersion buildConfiguration.targetSdkVersion
+        versionName releaseConfiguration.releaseVersion
+        versionCode releaseConfiguration.releaseVersionCode
     }
 
     buildTypes {
@@ -32,3 +27,5 @@ dependencies {
     compileOnly libraries.androidx.appcompat
     api libraries.growingio.tracker_core
 }
+
+apply from: "${project.rootProject.file('mavenPush.gradle')}"
