@@ -33,6 +33,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation project(':growingio-tracker-cdp')
-    implementation project(':growingio-autotracker-cdp')
+    debugApi project(':growingio-tracker-cdp')
+    releaseApi libraries.growingio.tracker_cdp
+
+    debugApi project(':growingio-autotracker-cdp')
+    releaseApi libraries.growingio.autotracker_cdp
 }

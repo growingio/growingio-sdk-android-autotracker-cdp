@@ -30,6 +30,7 @@ buildscript {
                         'tracker_core'    : "com.growingio.android:tracker-core:$releaseConfiguration.releaseVersion",
                         'autotracker_core': "com.growingio.android:autotracker-core:$releaseConfiguration.releaseVersion",
                         'tracker_cdp'     : "com.growingio.android:tracker-cdp:$releaseConfiguration.releaseVersion",
+                        'autotracker_cdp' : "com.growingio.android:autotracker-cdp:$releaseConfiguration.releaseVersion",
                 ],
         ]
     }
