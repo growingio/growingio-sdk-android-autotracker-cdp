@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_set_user_zhangsan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置账号张三" />
+
+    <Button
+        android:id="@+id/btn_clean_userId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清除账号" />
+
+    <Button
+        android:id="@+id/btn_set_user_lisi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置账号李四" />
+
+    <Button
+        android:id="@+id/btn_track_item_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Track物品模型自定义事件" />
+
+</LinearLayout>

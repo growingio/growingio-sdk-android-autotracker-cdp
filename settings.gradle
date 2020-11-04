@@ -1,0 +1,4 @@
+rootProject.name = "growingio-sdk-android-autotracker-cdp"
+include ':example'
+include ':growingio-tracker-cdp'
+include ':growingio-autotracker-cdp'
