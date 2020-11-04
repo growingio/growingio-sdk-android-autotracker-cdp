@@ -3,16 +3,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "30.0.0"
-
+    compileSdkVersion buildConfiguration.compileVersion
     defaultConfig {
-        minSdkVersion 17
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
-        consumerProguardFiles "consumer-rules.pro"
+        minSdkVersion buildConfiguration.minSdkVersion
+        targetSdkVersion buildConfiguration.targetSdkVersion
+        versionName releaseConfiguration.releaseVersion
+        versionCode releaseConfiguration.releaseVersionCode
     }
 
     buildTypes {
@@ -31,5 +27,9 @@ dependencies {
     compileOnly libraries.android.fragment
     compileOnly libraries.androidx.fragment
     api libraries.growingio.autotracker_core
-    implementation project(':growingio-tracker-cdp')
+
+    debugApi project(':growingio-tracker-cdp')
+    releaseApi libraries.growingio.tracker_cdp
 }
+
+apply from: "${project.rootProject.file('mavenPush.gradle')}"

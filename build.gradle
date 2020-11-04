@@ -10,8 +10,8 @@ buildscript {
         ]
 
         releaseConfiguration = [
-                releaseVersion    : "3.0.0",
-                releaseVersionCode: 300,
+                releaseVersion    : "0.0.1",
+                releaseVersionCode: 1,
         ]
 
         libraries = [
@@ -29,6 +29,7 @@ buildscript {
                 'growingio': [
                         'tracker_core'    : "com.growingio.android:tracker-core:$releaseConfiguration.releaseVersion",
                         'autotracker_core': "com.growingio.android:autotracker-core:$releaseConfiguration.releaseVersion",
+                        'tracker_cdp'     : "com.growingio.android:tracker-cdp:$releaseConfiguration.releaseVersion",
                 ],
         ]
     }
@@ -40,6 +41,7 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:3.5.0"
+        classpath "com.novoda:bintray-release:0.9.2"
         classpath "com.growingio.android:autotracker-gradle-plugin:${releaseConfiguration.releaseVersion}"
 
         // NOTE: Do not place your application dependencies here; they belong

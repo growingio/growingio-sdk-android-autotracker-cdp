@@ -4,17 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "30.0.0"
-
+    compileSdkVersion buildConfiguration.compileVersion
     defaultConfig {
         applicationId "com.growingio.android.cdp"
-        minSdkVersion 17
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdkVersion buildConfiguration.minSdkVersion
+        targetSdkVersion buildConfiguration.targetSdkVersion
+        versionName releaseConfiguration.releaseVersion
+        versionCode releaseConfiguration.releaseVersionCode
     }
 
     buildTypes {
