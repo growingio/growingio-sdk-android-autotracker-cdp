@@ -21,6 +21,10 @@ import androidx.annotation.NonNull;
 public class CdpAutotrackConfiguration extends AutotrackConfiguration {
     private String mDataSourceId;
 
+    public CdpAutotrackConfiguration(String projectId, String urlScheme) {
+        super(projectId, urlScheme);
+    }
+
     public String getDataSourceId() {
         return mDataSourceId;
     }
@@ -33,18 +37,6 @@ public class CdpAutotrackConfiguration extends AutotrackConfiguration {
     @Override
     public CdpAutotrackConfiguration setImpressionScale(float scale) {
         super.setImpressionScale(scale);
-        return this;
-    }
-
-    @Override
-    public CdpAutotrackConfiguration setProjectId(String projectId) {
-        super.setProjectId(projectId);
-        return this;
-    }
-
-    @Override
-    public CdpAutotrackConfiguration setUrlScheme(String urlScheme) {
-        super.setUrlScheme(urlScheme);
         return this;
     }
 
@@ -99,9 +91,7 @@ public class CdpAutotrackConfiguration extends AutotrackConfiguration {
     @NonNull
     @Override
     public CdpAutotrackConfiguration clone() {
-        return new CdpAutotrackConfiguration()
-                .setProjectId(getProjectId())
-                .setUrlScheme(getUrlScheme())
+        return new CdpAutotrackConfiguration(getProjectId(), getUrlScheme())
                 .setChannel(getChannel())
                 .setDebugEnabled(isDebugEnabled())
                 .setCellularDataLimit(getCellularDataLimit())

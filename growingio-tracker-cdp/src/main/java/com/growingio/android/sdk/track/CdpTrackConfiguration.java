@@ -21,6 +21,10 @@ import androidx.annotation.NonNull;
 public class CdpTrackConfiguration extends TrackConfiguration {
     private String mDataSourceId;
 
+    public CdpTrackConfiguration(String projectId, String urlScheme) {
+        super(projectId, urlScheme);
+    }
+
     public String getDataSourceId() {
         return mDataSourceId;
     }
@@ -31,20 +35,8 @@ public class CdpTrackConfiguration extends TrackConfiguration {
     }
 
     @Override
-    public CdpTrackConfiguration setProjectId(String projectId) {
-        super.setProjectId(projectId);
-        return this;
-    }
-
-    @Override
     public CdpTrackConfiguration setDataCollectionEnabled(boolean dataCollectionEnabled) {
         super.setDataCollectionEnabled(dataCollectionEnabled);
-        return this;
-    }
-
-    @Override
-    public CdpTrackConfiguration setUrlScheme(String urlScheme) {
-        super.setUrlScheme(urlScheme);
         return this;
     }
 
@@ -93,9 +85,7 @@ public class CdpTrackConfiguration extends TrackConfiguration {
     @NonNull
     @Override
     public CdpTrackConfiguration clone() {
-        return new CdpTrackConfiguration()
-                .setProjectId(getProjectId())
-                .setUrlScheme(getUrlScheme())
+        return new CdpTrackConfiguration(getProjectId(), getUrlScheme())
                 .setChannel(getChannel())
                 .setDebugEnabled(isDebugEnabled())
                 .setCellularDataLimit(getCellularDataLimit())
