@@ -30,16 +30,12 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         if (mIsAutotracker) {
-            GrowingAutotracker.startWithConfiguration(this, new CdpAutotrackConfiguration()
-                    .setProjectId("cdpProjectId")
+            GrowingAutotracker.startWithConfiguration(this, new CdpAutotrackConfiguration("cdpProjectId", "cdpUrlScheme")
                     .setDataSourceId("cdpDataSourceId")
-                    .setUrlScheme("cdpUrlScheme")
                     .setDebugEnabled(true));
         } else {
-            GrowingTracker.startWithConfiguration(this, new CdpTrackConfiguration()
-                    .setProjectId("cdpProjectId")
+            GrowingTracker.startWithConfiguration(this, new CdpTrackConfiguration("cdpProjectId", "cdpUrlScheme")
                     .setDataSourceId("cdpDataSourceId")
-                    .setUrlScheme("cdpUrlScheme")
                     .setDebugEnabled(true));
         }
     }

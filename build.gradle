@@ -10,8 +10,8 @@ buildscript {
         ]
 
         releaseConfiguration = [
-                releaseVersion    : "0.0.1",
-                releaseVersionCode: 1,
+                releaseVersion    : "0.0.2-SNAPSHOT",
+                releaseVersionCode: 2,
         ]
 
         libraries = [
@@ -39,10 +39,12 @@ buildscript {
         mavenLocal()
         google()
         jcenter()
+        maven { url "http://oss.jfrog.org/oss-snapshot-local/" }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:3.5.0"
         classpath "com.novoda:bintray-release:0.9.2"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.18.0"
         classpath "com.growingio.android:autotracker-gradle-plugin:${releaseConfiguration.releaseVersion}"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -55,6 +57,7 @@ allprojects {
         mavenLocal()
         google()
         jcenter()
+        maven { url "http://oss.jfrog.org/oss-snapshot-local/" }
     }
 }
 
