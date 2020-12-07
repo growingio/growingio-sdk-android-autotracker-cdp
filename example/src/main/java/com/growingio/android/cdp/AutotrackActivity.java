@@ -17,6 +17,7 @@
 package com.growingio.android.cdp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 public class AutotrackActivity extends Activity {
@@ -25,5 +26,8 @@ public class AutotrackActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_autotrack);
+        findViewById(R.id.btn_start_hybrid).setOnClickListener((view) -> {
+            startActivity(new Intent(AutotrackActivity.this, WebViewActivity.class));
+        });
     }
 }

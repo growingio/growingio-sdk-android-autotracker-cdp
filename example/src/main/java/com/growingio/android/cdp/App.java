@@ -17,6 +17,8 @@
 package com.growingio.android.cdp;
 
 import android.app.Application;
+import android.os.Build;
+import android.webkit.WebView;
 
 import com.growingio.android.sdk.autotrack.CdpAutotrackConfiguration;
 import com.growingio.android.sdk.autotrack.GrowingAutotracker;
@@ -29,10 +31,15 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            WebView.setWebContentsDebuggingEnabled(true);
+        }
         if (mIsAutotracker) {
-            GrowingAutotracker.startWithConfiguration(this, new CdpAutotrackConfiguration("cdpProjectId", "cdpUrlScheme")
-                    .setDataSourceId("cdpDataSourceId")
-                    .setDebugEnabled(true));
+            GrowingAutotracker.startWithConfiguration(this,
+                    new CdpAutotrackConfiguration("bfbb9ccbd64c2232", "growing.d80871b41ef40518")
+                            .setDataCollectionServerHost("http://106.75.81.105:8080/")
+                            .setDataSourceId("aa87ed9f71c2edf9")
+                            .setDebugEnabled(true));
         } else {
             GrowingTracker.startWithConfiguration(this, new CdpTrackConfiguration("cdpProjectId", "cdpUrlScheme")
                     .setDataSourceId("cdpDataSourceId")
