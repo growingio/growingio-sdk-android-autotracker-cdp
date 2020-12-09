@@ -154,6 +154,18 @@ public class CdpAutotrackConfiguration extends AutotrackConfiguration {
         return this;
     }
 
+    /**
+     * 是否采集Android OAID，如果设置为采集的话，受OAID获取时间的限制，事件采集可能会延迟
+     *
+     * @param enabled 采集开关，默认值 false
+     * @return this
+     */
+    @Override
+    public CdpAutotrackConfiguration setOaidEnabled(boolean enabled) {
+        super.setOaidEnabled(enabled);
+        return this;
+    }
+
     @NonNull
     @Override
     public CdpAutotrackConfiguration clone() {
@@ -167,6 +179,7 @@ public class CdpAutotrackConfiguration extends AutotrackConfiguration {
                 .setDataCollectionEnabled(isDataCollectionEnabled())
                 .setDataCollectionServerHost(getDataCollectionServerHost())
                 .setImpressionScale(getImpressionScale())
-                .setDataSourceId(getDataSourceId());
+                .setDataSourceId(getDataSourceId())
+                .setOaidEnabled(isOaidEnabled());
     }
 }
