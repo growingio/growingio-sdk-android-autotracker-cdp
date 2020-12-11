@@ -23,13 +23,10 @@ android {
     }
 }
 
-dependencies {
-    compileOnly libraries.android.fragment
-    compileOnly libraries.androidx.fragment
-    api libraries.growingio.autotracker_core
 
-    debugApi project(':growingio-tracker-core-cdp')
-    releaseApi libraries.growingio.tracker_core_cdp
+dependencies {
+    compileOnly libraries.androidx.appcompat
+    api libraries.growingio.tracker_core
 }
 
 apply from: "${project.rootProject.file('mavenPush.gradle')}"
