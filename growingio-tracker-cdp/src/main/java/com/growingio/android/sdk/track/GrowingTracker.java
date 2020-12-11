@@ -21,12 +21,11 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.growingio.android.sdk.track.cdp.CdpEventBuildInterceptor;
 import com.growingio.android.sdk.track.cdp.ResourceItem;
 import com.growingio.android.sdk.track.cdp.ResourceItemCustomEvent;
-import com.growingio.android.sdk.track.interfaces.ResultCallback;
 import com.growingio.android.sdk.track.log.Logger;
 import com.growingio.android.sdk.track.utils.ThreadUtils;
 
@@ -139,13 +138,14 @@ public class GrowingTracker implements IGrowingTracker {
     }
 
     @Override
-    public void getDeviceId(@NonNull ResultCallback<String> callback) {
-        mTracker.getDeviceId(callback);
-    }
-
-    @Override
     public void setDataCollectionEnabled(boolean enabled) {
         mTracker.setDataCollectionEnabled(enabled);
+    }
+
+    @Nullable
+    @Override
+    public String getDeviceId() {
+        return mTracker.getDeviceId();
     }
 
     @Override

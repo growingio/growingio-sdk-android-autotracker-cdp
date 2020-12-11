@@ -33,7 +33,6 @@ import com.growingio.android.sdk.track.TrackMainThread;
 import com.growingio.android.sdk.track.cdp.CdpEventBuildInterceptor;
 import com.growingio.android.sdk.track.cdp.ResourceItem;
 import com.growingio.android.sdk.track.cdp.ResourceItemCustomEvent;
-import com.growingio.android.sdk.track.interfaces.ResultCallback;
 import com.growingio.android.sdk.track.log.Logger;
 import com.growingio.android.sdk.track.utils.ThreadUtils;
 
@@ -147,13 +146,14 @@ public class GrowingAutotracker implements IGrowingAutotracker {
     }
 
     @Override
-    public void getDeviceId(@Nullable ResultCallback<String> callback) {
-        mAutotracker.getDeviceId(callback);
-    }
-
-    @Override
     public void setDataCollectionEnabled(boolean enabled) {
         mAutotracker.setDataCollectionEnabled(enabled);
+    }
+
+    @Nullable
+    @Override
+    public String getDeviceId() {
+        return mAutotracker.getDeviceId();
     }
 
     @Override

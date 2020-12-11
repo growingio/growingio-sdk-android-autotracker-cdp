@@ -18,8 +18,6 @@ package com.growingio.android.sdk.track;
 
 import androidx.annotation.Nullable;
 
-import com.growingio.android.sdk.track.interfaces.ResultCallback;
-
 import java.util.Map;
 
 enum EmptyGrowingTracker implements IGrowingTracker {
@@ -75,8 +73,10 @@ enum EmptyGrowingTracker implements IGrowingTracker {
 
     }
 
+    @Nullable
     @Override
-    public void getDeviceId(@Nullable ResultCallback<String> callback) {
-
+    public String getDeviceId() {
+        return null;
     }
+
 }

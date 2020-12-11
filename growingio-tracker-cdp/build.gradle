@@ -25,7 +25,9 @@ android {
 
 dependencies {
     compileOnly libraries.androidx.appcompat
-    api libraries.growingio.tracker_core
+
+    debugApi project(':growingio-tracker-core-cdp')
+    releaseApi libraries.growingio.tracker_core_cdp
 }
 
 apply from: "${project.rootProject.file('mavenPush.gradle')}"

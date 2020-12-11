@@ -19,8 +19,6 @@ package com.growingio.android.sdk.track;
 
 import androidx.annotation.Nullable;
 
-import com.growingio.android.sdk.track.interfaces.ResultCallback;
-
 import java.util.Map;
 
 /**
@@ -107,9 +105,11 @@ public interface IGrowingTracker {
     void setDataCollectionEnabled(boolean enabled);
 
     /**
-     * 异步获取deviceId，又称为匿名用户id，SDK 自动生成用来定义唯一设备。
+     * 获取deviceId，又称为匿名用户id，SDK 自动生成用来定义唯一设备。
+     * 如果没有初始化SDK 或者关闭采集开关可能返回值为null，且可能有IO操作
      *
-     * @param callback 参数非空，回调线程不确定
+     * @return deviceId，又称为匿名用户id
      */
-    void getDeviceId(@Nullable ResultCallback<String> callback);
+    @Nullable
+    String getDeviceId();
 }
