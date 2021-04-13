@@ -17,7 +17,7 @@ jobs:
         run: |
           chmod +x gradlew
           chmod +x checkstyle/checkstyle.sh
-          chmod +x publishAllToMavenLocal.sh
+          chmod +x gradle/publishAllToMavenLocal.sh
 
       - name: Run Gradle command
         run: |
