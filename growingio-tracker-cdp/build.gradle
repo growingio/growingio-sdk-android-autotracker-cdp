@@ -30,4 +30,4 @@ dependencies {
     releaseApi libraries.growingio.tracker_core_cdp
 }
 
-apply from: "${project.rootProject.file('mavenPush.gradle')}"
+apply from: "${rootProject.projectDir}/gradle/publishMaven.gradle"
