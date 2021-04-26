@@ -10,7 +10,7 @@ buildscript {
         ]
 
         releaseConfiguration = [
-                releaseVersion    : "3.1.0-SNAPSHOT",
+                releaseVersion    : "3.1.0",
                 releaseVersionCode: 30100,
         ]
 
@@ -42,6 +42,7 @@ buildscript {
         google()
         jcenter()
         maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url "https://s01.oss.sonatype.org/content/repositories/releases/" }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:3.5.0"
@@ -58,6 +59,7 @@ allprojects {
         google()
         jcenter()
         maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url "https://s01.oss.sonatype.org/content/repositories/releases/" }
     }
 }
 
