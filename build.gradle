@@ -86,3 +86,5 @@ subprojects { project ->
         }
     }
 }
+
+apply from: "${rootProject.projectDir}/gradle/stagingMaven.gradle"
