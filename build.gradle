@@ -43,6 +43,7 @@ buildscript {
         jcenter()
         maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://s01.oss.sonatype.org/content/repositories/releases/" }
+        maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:3.5.0"
@@ -50,6 +51,19 @@ buildscript {
         classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.30.0"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+    }
+}
+
+plugins {
+    id 'org.sonarqube' version '3.1.1'
+}
+
+sonarqube {
+    properties {
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.projectKey", "growingio_growingio-sdk-android-autotracker-cdp"
+        property "sonar.organization", "growingio"
+        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
 
@@ -71,8 +85,8 @@ subprojects { project ->
     apply plugin: 'checkstyle'
 
     task checkstyle(type: Checkstyle, group: 'check') {
-        configFile rootProject.file('checkstyle/checkstyle.xml')
-        configProperties.checkstyleJavaHeader = rootProject.file('checkstyle/java.header')
+        configFile file("${rootDir}/config/checkstyle/checkstyle.xml")
+        configProperties.checkstyleJavaHeader = file("${rootDir}/config/checkstyle/java.header")
         source 'src/main/java', 'src/test/java', 'src/androidTest/java'
         ignoreFailures false
         showViolations true
